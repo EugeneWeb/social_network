@@ -1,0 +1,42 @@
+.form {
+    width: 600px;
+    padding: 70px 100px;
+    border-radius: 10px;
+    
+    background-color: #E8EAED;
+}
+
+.loginInput {
+    padding: 5px 10px;
+
+    font-size: 16px;
+}
+
+.loginBtn {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 12px 25px;
+    border-radius: 5px;
+    color: #fff;
+
+    background-color: #00acc1;
+}
+.loginBtn:hover {
+    background-color: #0195a8;
+}
+.loginBtn:active {
+    background-color: #018a9c;
+}
+
+.loginTitle {
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.loginError {
+    text-align: center;
+    color: red;
+    font-size: 16px;
+}

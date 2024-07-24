@@ -1,0 +1,27 @@
+.error {
+    border-color:red !important;
+}
+.formError {
+    margin-bottom: 35px;
+
+    color: red;
+    text-transform: uppercase;
+}
+
+.formControls {
+    position: relative;
+}
+
+.text {
+    position: absolute;
+    width: 400px;
+    top: -25px;
+
+    color: red;
+}
+
+.element {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+}

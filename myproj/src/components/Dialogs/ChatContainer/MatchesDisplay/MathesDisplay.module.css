@@ -1,0 +1,56 @@
+.dialogsWrap {
+    height: 800px;
+ padding: 10px;  
+ border: 1px solid #838383; 
+ border-radius: 10px;
+}
+.noDialogsWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.noDialogsWrap .noDialogs{
+    padding: 0;
+    margin: 0;
+}
+
+.dialogs {
+    margin: 0 auto;
+    padding: 10px;
+    flex-direction: column;
+}
+.dialog {
+    padding: 10px;
+}
+.dialog:not(:last-child) {
+    
+    border-bottom: 1px solid #838383;
+}
+.fullname {
+    font-size: 20px;
+    color: #000;
+}
+
+.match {
+    margin-bottom: 20px;
+}
+.link {
+    color: #000
+}
+.link:hover {
+    color: #575757
+}
+.link:active {
+    color: #838383
+}
+
+
+.noDialogs {
+    margin-top: 50px;
+    color: #858585;
+    font-size: 18px;
+    text-align: center;
+}
+.photoWrap {
+    width: 64px;
+}

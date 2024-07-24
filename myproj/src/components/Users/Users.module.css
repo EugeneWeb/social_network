@@ -1,0 +1,37 @@
+.users__items {
+    min-height: 552px;
+    padding: 10px 30px;
+    margin-bottom: 30px;
+}
+.users {
+    min-height: 552px;
+}
+
+.btn__wrapper {
+    text-align: center;
+}
+.btn__wrapper button {
+    padding: 10px 15px;
+    border-radius: 10px;
+
+    font-size: 20px;
+
+    background-color: #f0f0f0;
+}
+.btn__wrapper button:hover {
+    background-color: #d1d0d0;
+}
+.btn__wrapper button:active {
+    background-color: #a8a8a8;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.noUsers {
+    margin-top: 50px;
+    color: #858585;
+    font-size: 18px;
+    text-align: center;
+}

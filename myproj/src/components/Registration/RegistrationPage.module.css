@@ -1,0 +1,40 @@
+.form {
+    min-width: 500px;
+    padding: 70px 100px;
+    border-radius: 10px;
+    
+    background-color: #E8EAED;
+}
+
+.registrationInput {
+    padding: 5px 10px;
+
+    font-size: 16px;
+}
+
+.registrationBtn {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 12px 15px;
+    border-radius: 5px;
+    color: #fff;
+
+    background-color: #C4A702;
+}
+.registrationBtn:hover {
+    background-color: #a78e02;
+}
+.registrationBtn:active {
+    background-color: #8d7801;
+}
+
+.registrationTitle {
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.registrationSuccess {
+    color: green;
+}

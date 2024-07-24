@@ -1,0 +1,23 @@
+.dialogsitem:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.dialog__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: black;
+}
+.dialog__link p{
+    flex: 3 3;
+}
+
+.img__wrap {
+    flex: 1 1;
+}
+
+.active {
+    font-weight: bold;
+    font-size: 17px;
+}

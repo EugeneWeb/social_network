@@ -1,0 +1,57 @@
+.title {
+    margin-bottom:30px;
+
+    font-weight: normal;
+}
+
+#addNews {
+    margin-bottom: 15px;
+}
+#postText {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid beige;
+
+    font-size: 16px;
+
+    background-color: #E8EAED;
+
+    resize: none;
+}
+#postText:focus {
+    outline: none;
+    border:1px solid #919191;
+}
+
+.addNews__btn {
+    display: flex;
+    justify-content: flex-end;
+}
+.addNews__btn button {
+    padding: 5px 10px;
+
+    font-size: 16px;
+    background-color: #f0f0f0;
+}
+.addNews__btn button:hover {
+   background-color: #d6d6d6;;
+}
+.addNews__btn button:active {
+   background-color: #c7c7c7;;
+}
+
+
+
+.post__textarea {
+    resize: none;
+}
+
+.post__wrap {
+    margin-bottom: 20px;
+}
+.noPosts {
+    margin-top: 50px;
+    color: #858585;
+    font-size: 18px;
+    text-align: center;
+}

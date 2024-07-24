@@ -1,0 +1,50 @@
+/* 91ebc7 */
+:global li.ant-menu-item.ant-menu-item-selected {
+    background-color: #e1fcf1;
+}
+:global li.ant-menu-item.ant-menu-item-selected a.active {
+    color: #5b917b;
+}
+:global
+    :where(.css-dev-only-do-not-override-djtmh8).ant-menu-light
+    .ant-menu-item-selected {
+    color: #5b917b;
+}
+
+.navbar {
+    grid-area: navbar;
+    padding: 20px;
+
+    background-color: #d4d8dd;
+}
+.navigation {
+    margin-bottom: 60px;
+}
+
+.navigation__item:not(:last-child) {
+    margin-bottom: 10px;
+}
+.navigation__item:nth-last-child(2) {
+    margin-bottom: 20px;
+}
+.navigation__item:nth-last-child(3) {
+    margin-bottom: 30px;
+}
+
+.navigation__link {
+    text-transform: uppercase;
+
+    font-size: 16px;
+    font-family: sans-serif;
+    color: #000;
+}
+.navigation__link:hover {
+    text-decoration: underline;
+}
+
+.active {
+    font-weight: bold;
+    color: #c4a702;
+}
+
+

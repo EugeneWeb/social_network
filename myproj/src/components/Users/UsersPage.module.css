@@ -1,0 +1,9 @@
+.wrap {
+    position: relative;
+}
+.users__title {
+    margin-bottom: 20px;
+
+    font-weight: normal;
+    font-family: sans-serif;
+}

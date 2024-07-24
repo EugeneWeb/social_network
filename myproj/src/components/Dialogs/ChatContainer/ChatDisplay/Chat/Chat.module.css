@@ -1,0 +1,41 @@
+.chat {
+    height: 700px;
+    padding: 25px;
+
+    overflow-y: auto;
+}
+
+.back {
+    font-size: 25px;
+    padding-left: 30px;
+    margin-bottom: 15px;
+}
+
+.noMessages {
+    margin-top: 50px;
+    color: #858585;
+    font-size: 18px;
+    text-align: center;
+}
+
+.message {
+    position: relative;
+    margin-bottom: 30px;
+    padding-top: 5px;
+}
+.message__info {
+    margin: 0;
+    padding: 0;
+}
+.fullname {
+    position: absolute;
+    top: 0px;
+    left: 75px;
+
+    font-weight: bold;
+}
+.date {
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
