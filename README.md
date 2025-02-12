@@ -8,4 +8,4 @@ __База данных__: mongodb
 
 __Сервер (написан с использованием паттерна MVC)__: node.js, express, mongoose, jsonwebtoken
 
-__Клиент__: react + typescript, redux/toolkit, react-redux ,formik + yup , antd, jest, axios
+__Клиент__: react + typescript, redux/toolkit + RTK-query, react-redux ,formik + yup , antd, jest, axios
