@@ -13,7 +13,7 @@ services:
       - server
 
   server:
-    image: node:18
+    image: node:14
     container_name: server
     restart: always
     ports:
@@ -28,7 +28,7 @@ services:
       - mongodb
 
   mongodb:
-    image: mongo:latest
+    image: mongo:4.4
     container_name: mongodb
     restart: always
     ports:
