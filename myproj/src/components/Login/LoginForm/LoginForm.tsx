@@ -72,6 +72,7 @@ export const LoginForm: FC<LoginFormProps> = () => {
                     className={s.loginInput}
                     prefix={<UserOutlined />}
                     placeholder="Имя пользователя или E-mail"
+                    autoComplete="email"
                 />
             </Form.Item>
             <Form.Item
@@ -85,6 +86,7 @@ export const LoginForm: FC<LoginFormProps> = () => {
                     prefix={<LockOutlined />}
                     type="password"
                     placeholder="Пароль"
+                    autoComplete="current-password"
                 />
             </Form.Item>
 

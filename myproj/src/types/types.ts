@@ -43,10 +43,7 @@ export type DialogType = {
     name: string;
     path: string;
 };
-// export type MessageType = {
-//     id: number;
-//     text: string;
-// };
+
 export type PostType = {
     _id: string
     path: string;

@@ -13,6 +13,8 @@ export const MatchesDisplay = () => {
     useEffect(() => {
         dispatch(requestUsersChats());
     }, []);
+
+    const { messageId } = useParams();
         
     const hasDialogs = dialogs.length > 0;
 
@@ -24,7 +26,7 @@ export const MatchesDisplay = () => {
                     {dialogs?.map((match) => (
                         <Link
                             key={match._id}
-                            className={s.dialog}
+                            className={[s.dialog, match._id === messageId ? s.selectedDialog : ''].join(' ')}
                             to={`/messages/${match._id}`}
                         >
                             <Flex gap={30} justify="start" align="center">

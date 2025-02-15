@@ -20,11 +20,16 @@
     flex-direction: column;
 }
 .dialog {
+    border-radius: 10px;
+
     padding: 10px;
 }
 .dialog:not(:last-child) {
     
     border-bottom: 1px solid #838383;
+}
+.selectedDialog {
+    background-color: #f0eeee;
 }
 .fullname {
     font-size: 20px;
@@ -54,3 +59,4 @@
 .photoWrap {
     width: 64px;
 }
+

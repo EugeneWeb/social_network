@@ -1,14 +1,11 @@
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Col, DatePicker, Flex, Input, Row, Space } from "antd";
+import { Button, Col, DatePicker, DatePickerProps, Flex, Input, Row } from "antd";
+import ru from "antd/es/calendar/locale/ru_RU";
 import Form, { Rule } from "antd/es/form";
 import { useForm } from "antd/es/form/Form";
-import Paragraph from "antd/es/typography/Paragraph";
-import Title from "antd/es/typography/Title";
-import ru from "antd/es/calendar/locale/ru_RU";
 
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../../hooks/redux";
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import { updateCurrentUser } from "../../../redux/authReducer";
 import { useUpdateUserMutation } from "../../../services/PostService";
 import { formatDate, removeFalsyProperties } from "../../../utils/helpers";
@@ -17,30 +14,46 @@ import s from "./SettingsForm.module.css";
 
 type SettingsFormValuesType = {
     fullname: string;
-
     city: string;
     country: string;
-
     birthday: Date;
     education: string;
 };
 interface SettingsFormProps {}
 export const SettingsForm: FC<SettingsFormProps> = () => {
     const dispatch = useAppDispatch();
-    // const loginError = useAppSelector(state => state.auth.loginError)
-    // const login = (login: string, password: string) => {
-    //     dispatch(loginUser({ login, password }));
-    // };
+
     const [updateUser, { isError: isTogglePostLikesError }] =
         useUpdateUserMutation();
     const [form] = useForm();
-    const navigate = useNavigate()
-    
+    const navigate = useNavigate();
+
+    const defaultUser = {
+        fullname: "",
+        city: "",
+        country: "",
+        education: "",
+    };
+
+    const currentUser = useAppSelector((state) => state.auth.currentUser)
+
+    const defaultFormValues =
+       (currentUser && {
+        fullname: currentUser?.fullname,
+        city: currentUser?.location.city,
+        country: currentUser?.location.country,
+        education: currentUser?.desc.education,
+       }) || defaultUser;
+    useEffect(() => {
+        form.setFieldsValue(defaultFormValues);
+    }, []);
 
     const onFinish = async (values: SettingsFormValuesType) => {
         const notEmptyValues = removeFalsyProperties(values);
-        const formattedDate = notEmptyValues?.birthday && formatDate(new Date(notEmptyValues.birthday))
-        
+        const formattedDate =
+            notEmptyValues?.birthday &&
+            formatDate(new Date(notEmptyValues.birthday));
+
         const updatedUser = {
             fullname: notEmptyValues?.fullname,
             location: {
@@ -49,12 +62,12 @@ export const SettingsForm: FC<SettingsFormProps> = () => {
             },
             desc: {
                 birthday: formattedDate,
-                education: notEmptyValues?.education
+                education: notEmptyValues?.education,
             },
-        }
+        };
         await updateUser(updatedUser);
-        await dispatch(updateCurrentUser(updatedUser))
-        navigate('/profile')
+        await dispatch(updateCurrentUser(updatedUser));
+        navigate("/profile");
     };
 
     const rules: Record<string, Rule[]> = {
@@ -64,9 +77,7 @@ export const SettingsForm: FC<SettingsFormProps> = () => {
             },
         ],
         birthday: [
-            {
-                type: "date",
-            },
+            
         ],
         city: [
             {
@@ -87,13 +98,10 @@ export const SettingsForm: FC<SettingsFormProps> = () => {
             fieldDateFormat: "DD.MM.YYYY",
         },
     };
-    // useEffect(() => {
-    //     if(loginError.message) {
-    //         setTimeout(() => {
-    //             dispatch(clearLoginError())
-    //         }, 3000)
-    //     }
-    // }, [loginError.message])
+
+    const onChange: DatePickerProps['onChange'] = (date, dateString) => {
+        console.log(date, dateString);
+      };
 
     return (
         <Form
@@ -120,10 +128,12 @@ export const SettingsForm: FC<SettingsFormProps> = () => {
                         name="birthday"
                         label="Дата рождения"
                         labelCol={{ span: 0 }}
-                        rules={rules.birthday}
                         noStyle
                     >
-                        <DatePicker placeholder="Дата рождения" locale={RuLocale} />
+                        <DatePicker
+                            placeholder="Дата рождения"
+                            locale={RuLocale}
+                        />
                     </Form.Item>
                 </Col>
             </Row>

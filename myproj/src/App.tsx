@@ -5,8 +5,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 
-import { News } from "./components/News/News";
-import { Music } from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import { Error } from "./components/Error/Error";
 import { DialogsPage } from "./components/Dialogs/DialogsPage";
@@ -58,7 +56,7 @@ export const App: FC<PropsType> = () => {
                     >
                         {isAuth && <NavBar />}
                         <Content
-                            style={{ padding: "0 48px 0 96px" }}
+                            style={isAuth ? { padding: "0 48px 0 96px" } : { height: 'calc(100vh - 377px)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
                         >
                             <div>
                                 <div>
@@ -76,10 +74,6 @@ export const App: FC<PropsType> = () => {
                                                 path="/profile/:userId"
                                                 element={<ProfilePage />}
                                             />
-                                            {/* <Route
-                                                path="/news"
-                                                element={<News />}
-                                            /> */}
                                             <Route
                                                 path="/messages"
                                                 element={<DialogsPage />}
@@ -88,10 +82,6 @@ export const App: FC<PropsType> = () => {
                                                 path="/messages/:messageId"
                                                 element={<DialogsPage />}
                                             />
-                                            {/* <Route
-                                                path="/music"
-                                                element={<Music />}
-                                            /> */}
                                             <Route
                                                 path="/settings"
                                                 element={<Settings />}
@@ -128,5 +118,3 @@ export const App: FC<PropsType> = () => {
         </Router>
     );
 };
-
-// export default App;

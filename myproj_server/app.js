@@ -17,8 +17,9 @@ const ch = require("chalk");
 const successMsg = ch.bgKeyword("green").white;
 const errorMsg = ch.bgKeyword("white").red;
 
+
 const mongoose = require("mongoose");
-const db = `mongodb://127.0.0.1:27017/${process.env.DB_NAME}`;
+const db = process.env.MONGO_URI;
 mongoose
     .connect(db, {
         useNewUrlParser: true,
@@ -28,5 +29,6 @@ mongoose
     .catch((err) => console.log(errorMsg(err)));
 
 const apiAllUsersRoutes = require("./routes/users-routes/api-all-users-routes");
+
 
 app.use("/api/user", apiAllUsersRoutes);

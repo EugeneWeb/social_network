@@ -12,7 +12,7 @@ const initialState = {
     totalCount: 0,
     perPage: 4,
     isFetching: false,
-    followingInProgress: [] as string[], //Array of users ids
+    followingInProgress: [] as string[],
     filter: {
         friend: null,
         term: null,

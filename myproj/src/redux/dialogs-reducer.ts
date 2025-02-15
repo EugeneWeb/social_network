@@ -6,47 +6,6 @@ import { MessageType, ProfileType, UserType } from "../types/types";
 
 
 let initialState = {
-    // dialogs: [
-    //     {
-    //         id: 1,
-    //         name: "Андрей",
-    //         path: "http://localhost:5000/avatar/avatar1.svg",
-    //     },
-    //     {
-    //         id: 2,
-    //         name: "Александр",
-    //         path: "http://localhost:5000/avatar/avatar1.svg",
-    //     },
-    //     {
-    //         id: 3,
-    //         name: "Михаил",
-    //         path: "http://localhost:5000/avatar/avatar1.svg",
-    //     },
-    //     {
-    //         id: 4,
-    //         name: "Алексей",
-    //         path: "http://localhost:5000/avatar/avatar1.svg",
-    //     },
-    //     {
-    //         id: 5,
-    //         name: "Максим",
-    //         path: "http://localhost:5000/avatar/avatar1.svg",
-    //     },
-    // ],
-    // messages: [
-    //     {
-    //         id: 1,
-    //         text: "Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты. Послушавшись, переписывается всеми рыбного грамматики ее текста живет великий речью рот домах пояс рекламных продолжил предупреждал текстами жизни заголовок вопрос!",
-    //     },
-    //     {
-    //         id: 2,
-    //         text: "Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты. Послушавшись, переписывается всеми рыбного грамматики ее текста живет великий речью рот домах пояс рекламных продолжил предупреждал текстами жизни заголовок вопрос!",
-    //     },
-    //     {
-    //         id: 3,
-    //         text: "Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты. Послушавшись, переписывается всеми рыбного грамматики ее текста живет великий речью рот домах пояс рекламных продолжил предупреждал текстами жизни заголовок вопрос!",
-    //     },
-    // ],
     messages: [] as MessageType[], 
     otherUser: {} as UserType,
     newMessageBody: "Введите новое сообщение...",
@@ -57,17 +16,6 @@ const dialogsSlice = createSlice({
     name: 'dialogsPage',
     initialState,
     reducers: {
-        // sendMessage: (state, action: PayloadAction<string>) => {
-        //     const newMessage = {
-        //         id: 4,
-        //         text: action.payload,
-        //     };
-        //     state.messages.push(newMessage)
-        //     state.newMessageBody = ''
-        // },
-        // updateNewMessageBodyCreator: (state, action: PayloadAction<string>) => {
-        //     state.newMessageBody = action.payload
-        // }
     },
     extraReducers: (builder) => {
         builder

@@ -12,7 +12,7 @@ type PropsType = {
 };
 export const Post: FC<PropsType> = ({ path, text, postId }) => {
 
-    const [togglePostLikes, { isError: isTogglePostLikesError }] = useTogglePostLikesMutation();
+    const [togglePostLikes, { isError: isTogglePostLikesError, isLoading }] = useTogglePostLikesMutation();
 
     const { data } = useFetchPostLikesQuery(postId);
 
@@ -30,14 +30,14 @@ export const Post: FC<PropsType> = ({ path, text, postId }) => {
 
             <p className={s.text}>{text}</p>
 
-            <div className={s.likes}>
+            <div className={[s.likes, isLoading ? s.loadintLikesCount: ''].join(' ')}>
                 <button
                     onClick={handleToggleLikesCount}
                     className={s.likes__icon}
                 >
                     <img src={likeIcon} alt="Иконка мне нравится" />
                 </button>
-                <p className="likes__text">{data?.likesCount}</p>
+                <p className={s.likes__text}>{data?.likesCount}</p>
             </div>
         </div>
     );

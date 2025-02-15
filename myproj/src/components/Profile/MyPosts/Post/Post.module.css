@@ -38,6 +38,8 @@
     height: 40px;
 
     background-color: transparent;
+
+    cursor: pointer;
 }
 .likes__icon img {
     width: 100%;
@@ -46,4 +48,12 @@
 
 .likes__icon img:active {
     background-color: #969696;
+}
+
+.likes__text {
+    pointer-events: none;
+}
+
+.loadintLikesCount {
+    pointer-events: none;
 }

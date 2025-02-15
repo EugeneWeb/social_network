@@ -22,9 +22,6 @@ const rootReducer = combineReducers({
 export const store = configureStore({
     reducer: rootReducer,
     middleware: (getDefauiltMiddleware) => {
-        
-        // С помощью getDefauiltMiddleware получаем все middleware'ы
-        // С помощью concat добавляем middleware для сервиса
         return getDefauiltMiddleware().concat(postAPI.middleware)
     }
 })

@@ -84,6 +84,7 @@ export const RegistrationForm: FC<RegistrationFormProps> = () => {
                     className={s.registrationInput}
                     prefix={<UserOutlined />}
                     placeholder="Имя пользователя"
+                    autoComplete="username"
                 />
             </Form.Item>
             <Form.Item
@@ -94,6 +95,7 @@ export const RegistrationForm: FC<RegistrationFormProps> = () => {
                     className={s.registrationInput}
                     prefix={<MailOutlined />}
                     placeholder="E-mail"
+                    autoComplete="email"
                 />
             </Form.Item>
             <Form.Item
@@ -107,6 +109,7 @@ export const RegistrationForm: FC<RegistrationFormProps> = () => {
                     prefix={<LockOutlined />}
                     type="password"
                     placeholder="Пароль"
+                    autoComplete="new-password"
                 />
             </Form.Item>
 

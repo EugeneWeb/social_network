@@ -1,16 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
-// /64fc938f63a6bc3a1aeac335
-
-// interface FetchUser {
-//     user: IUser;
-//     resultCode: number;
-// }
-// interface FetchUsers {
-//     items: IUser[];
-//     totalCount: number;
-//     resultCode: number;
-// }
+import { baseServerUrl } from "../utils/baseUrl";
 
 interface IPost {
     _id: string;
@@ -44,7 +33,7 @@ export interface UpdateUserArguments {
 export const postAPI = createApi({
     reducerPath: "userAPI",
     baseQuery: fetchBaseQuery({
-        baseUrl: "http://localhost:5000/api/user",
+        baseUrl: `${baseServerUrl}/api/user`,
         prepareHeaders: (headers) => {
             const token = localStorage.getItem("token");
 
@@ -80,21 +69,7 @@ export const postAPI = createApi({
             }),
             invalidatesTags: ["PostLikes"],
         }),
-        // fetchUser: builder.query<FetchUser, void>({
-        //     query: () => "/64fc938f63a6bc3a1aeac335",
-        // }),
-        // fetchUsers: builder.query<FetchUsers, void>({
-        //     query: () => "/all",
-        //     providesTags: (result) => ["User"],
-        // }),
-        // addUser: builder.mutation<{ error: string }, string | null>({
-        //     query: (fullname) => ({
-        //         url: "/",
-        //         method: "POST",
-        //         body: { fullname },
-        //     }),
-        //     invalidatesTags: ["User"],
-        // }),
+        
         updateUser: builder.mutation<{ error: string }, UpdateUserArguments>({
             query: (newUserInfo) => {
                 return {
@@ -103,28 +78,9 @@ export const postAPI = createApi({
                     body: { ...newUserInfo },
                 };
             },
-            // invalidatesTags: ["User"],
         }),
-        // deleteUser: builder.mutation<IUser, string>({
-        //     query: (id) => ({
-        //         url: `/${id}`,
-        //         method: 'DELETE'
-        //     }),
-        //     invalidatesTags: ['User']
-        // })
     }),
 });
-
-// endpoints: builder => ({
-//     fetchUser: builder.query<any, number>({
-//         query: (id: number) => ({
-//             url: '/64fc938f63a6bc3a1aeac335',
-//             params: {
-//                 id
-//             }
-//         })
-//     })
-// })
 
 export const {
     useAddPostMutation,
@@ -133,4 +89,3 @@ export const {
     useTogglePostLikesMutation,
     useUpdateUserMutation,
 } = postAPI;
-// export const { useAddPostMutation, useFetchPostsQuery, useTogglePostLikesMutation, useFetchPostLikesQuery } = postAPI;

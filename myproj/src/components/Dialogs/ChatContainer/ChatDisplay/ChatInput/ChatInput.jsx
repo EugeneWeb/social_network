@@ -2,14 +2,12 @@ import { Button, Col, Form, Input, Row } from "antd";
 import s from "./ChatInput.module.css";
 import { SendOutlined } from "@ant-design/icons";
 import { useForm } from "antd/es/form/Form";
-import { useAppDispatch, useAppSelector } from "../../../../../hooks/redux";
-// import { requestUsersMessages, sendUsersMessage } from "../../../../../redux/users-reducer";
+import { useAppDispatch } from "../../../../../hooks/redux";
 import { useParams } from "react-router-dom";
 import { sendUsersMessage } from "../../../../../redux/dialogs-reducer";
 
 export const ChatInput = () => {
     const dispatch = useAppDispatch();
-    // const currentUser = useAppSelector((state) => state.auth.currentUser);
 
     const [form] = useForm();
     const { messageId } = useParams();
