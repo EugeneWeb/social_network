@@ -6,9 +6,6 @@
 cd myproj
 ```
 ```
-npm i
-```
-```
 npm run build
 ```
 ```
