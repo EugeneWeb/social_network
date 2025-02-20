@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { baseServerUrl } from "../utils/baseUrl";
 
 interface IPost {
     _id: string;
@@ -33,7 +32,7 @@ export interface UpdateUserArguments {
 export const postAPI = createApi({
     reducerPath: "userAPI",
     baseQuery: fetchBaseQuery({
-        baseUrl: `${baseServerUrl}/api/user`,
+        baseUrl: `/api/user`,
         prepareHeaders: (headers) => {
             const token = localStorage.getItem("token");
 

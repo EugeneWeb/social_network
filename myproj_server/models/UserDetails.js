@@ -22,11 +22,11 @@ const userDetailsSchema = new Schema({
     },
     photoUrl: {
         type: String,
-        default: 'http://localhost:5000/api/user/avatar/avatar1.svg'
+        default: `/api/user/avatar/avatar1.svg`
     },
     backgroundUrl: {
         type: String,
-        default: 'http://localhost:5000/api/user/background/bg1.webp'
+        default: `/api/user/background/bg1.webp`
     },
     following: [{type: Schema.Types.ObjectId, ref: 'UserDetails'}],
     friends: [{type: Schema.Types.ObjectId, ref: 'UserDetails'}],

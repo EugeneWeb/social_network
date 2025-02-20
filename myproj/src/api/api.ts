@@ -1,10 +1,9 @@
 import axios from "axios";
-import { baseServerUrl } from "../utils/baseUrl";
 
 export const getToken = () => localStorage.getItem("token");
 
 export const instance = axios.create({
-    baseURL: `${baseServerUrl}/api/user`,
+    baseURL: `/api/user`,
     headers: { Authorization: getToken() },
 });
 

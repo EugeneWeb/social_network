@@ -4,7 +4,6 @@ import { PostType, UserType } from "../types/types";
 import { ProfileResponseDataType, profileAPI } from "../api/profile-api";
 import { createAppAsyncThunk } from "../hooks/redux";
 import { ResultCodesEnum } from "../api/api";
-import { baseServerUrl } from "../utils/baseUrl";
 
 
 
@@ -12,7 +11,7 @@ const initialState = {
     posts: [
         {
             _id: '1',
-            path: `${baseServerUrl}/avatar/avatar1.svg`,
+            path: `/avatar/avatar1.svg`,
             text: "Далеко-далеко, за словесными горами в стране гласных и согласных живут рыбные тексты. Всемогущая инициал даль великий свой однажды образ злых власти снова встретил залетают. Грамматики составитель, единственное вопрос несколько они текста его.",
             likesCount: 25,
         }
@@ -29,7 +28,7 @@ const profileSlice = createSlice({
         addPost: (state, action: PayloadAction<string>) => {
             const newPost = {
                 _id: (state.posts.length + 1).toString(),
-                path: `${baseServerUrl}/avatar/avatar1.svg`,
+                path: `/avatar/avatar1.svg`,
                 text: action.payload,
                 likesCount: 25,
             };
