@@ -4,6 +4,7 @@ import likeIcon from "./img/like_icon.svg";
 import {
     useFetchPostLikesQuery, useTogglePostLikesMutation,
 } from "../../../../services/PostService";
+import { baseServerUrl } from "../../../../utils/baseServerUrl";
 
 type PropsType = {
     postId: string;
@@ -25,7 +26,7 @@ export const Post: FC<PropsType> = ({ path, text, postId }) => {
     return (
         <div className={s.post}>
             <div className={s.img__wrap}>
-                <img src={path} alt="Картинка комментария" />
+                <img src={baseServerUrl + path} alt="Картинка комментария" />
             </div>
 
             <p className={s.text}>{text}</p>

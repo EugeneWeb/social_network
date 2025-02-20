@@ -97,7 +97,6 @@ const registration = async (req, res) => {
         const role = await Role.findOne({ value: "User" });
         const userDetails = new UserDetails();
         await userDetails.save();
-
         const user = new UserAuth({
             username,
             email,

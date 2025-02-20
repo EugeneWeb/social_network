@@ -1,0 +1,1 @@
+export const baseServerUrl = 'http://5.35.91.239'

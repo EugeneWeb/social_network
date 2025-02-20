@@ -3,6 +3,7 @@ import { FC } from 'react';
 import s from './User.module.css'
 import { NavLink } from "react-router-dom";
 import { ProfileType, UserType } from '../../../types/types';
+import { baseServerUrl } from '../../../utils/baseServerUrl';
 
 type PropsType = {
     user: UserType
@@ -18,7 +19,7 @@ const User:FC<PropsType> = ({user, follow, unfollow, currentUser, followingInPro
                             <div className={s.img__wrap}>
                                 <NavLink to={`/profile/${user._id}`}>
                                     <img
-                                        src={user.photoUrl}
+                                        src={baseServerUrl + user.photoUrl}
                                         alt={`Фото ${user.fullname}`}
                                     />
                                 </NavLink>

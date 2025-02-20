@@ -6,6 +6,7 @@ import { Button } from "antd";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import { addToUserChats } from "../../../redux/authReducer";
 import { Link, useNavigate } from "react-router-dom";
+import { baseServerUrl } from "../../../utils/baseServerUrl";
 
 type PropsType = {
     profile: UserType;
@@ -24,13 +25,13 @@ export const ProfileInfo: FC<PropsType> = ({ profile, userId }) => {
     return (
         <div>
             <div className={s.bg}>
-                <img src={profile.backgroundUrl} alt="Картинка обоев" />
+                <img src={baseServerUrl + profile.backgroundUrl} alt="Картинка обоев" />
             </div>
 
             <div className={s.info}>
                 <div>
                     <div className={s.avatar__wrap}>
-                        <img src={profile.photoUrl} alt="Аватарка" />
+                        <img src={baseServerUrl + profile.photoUrl} alt="Аватарка" />
                     </div>
                     {userId && (
                         <>
